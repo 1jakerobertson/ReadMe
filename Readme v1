@@ -1,0 +1,116 @@
+// Global variable
+let sadsong;
+let angrysong; 
+let lonelysong;
+let disgustedsong;
+let happysong;
+let embarrassedsong;
+
+//handprint images
+let blue_handprint;
+let red_handprint;
+let black_handprint;
+let yellow_handprint;
+let green_handprint;
+let purple_handprint;
+
+// console.log(typeof mood);
+
+// -------------------------------
+function preload(){
+  sadsong = loadSound("so_sick.mp3");
+  angrysong = loadSound("dead_trollz.mp3");
+  lonelysong = loadSound("lonely.mp3");
+  disgustedsong = loadSound("trust_believe.mp3");
+  happysong = loadSound("nice_for_what.mp3");
+ embarrassedsong = loadSound("oops_song.mp3");
+  
+ blue_handprint = loadImage("blue_handprint.png");
+  red_handprint = loadImage("red_handprint.png");
+  black_handprint = loadImage("black_handprint.png");
+  yellow_handprint = loadImage("yellow_handprint.png");
+  green_handprint = loadImage("green_handprint.png");
+  purple_handprint = loadImage("purple_handprint.png");
+}
+
+function setup() {
+createCanvas(744, windowHeight);
+
+  
+  
+  background(0);
+}
+
+ let user_emotion = window.prompt("How are you feeling?");
+
+function draw() {
+if (user_emotion == "sad"){
+    console.log('Aww. I hope you cheer up!')
+    sadsong.setVolume (0.75);
+    // sadsong.play();
+      mouseClicked();
+    image(blue_handprint, 128, 60);
+  }
+  else if (user_emotion == "angry"){
+    console.log('Calm down man! Blow off some steam.')
+    angrysong.setVolume (0.75);
+    // angrysong.play();
+    mouseClicked();
+    image(red_handprint, 128, 60);
+  }
+  else if (user_emotion == "lonely"){
+   console.log('Lol ur a loner')
+   lonelysong.setVolume (0.75);
+   // lonelysong.play();
+    mouseClicked();
+   image(black_handprint, 128, 60);
+  }
+  else if (user_emotion == "happy"){
+    console.log('Nice')
+    happysong.setVolume(0.75);
+    // happysong.play();
+        mouseClicked();
+    image(yellow_handprint, 128, 60);
+  }
+  else if (user_emotion == "disgusted"){
+    console.log('Dang')
+    disgustedsong.setVolume(0.75);
+    // disgustedsong.play();
+        mouseClicked();
+    image(green_handprint, 128, 60);
+  }
+  else if (user_emotion == "embarrassed"){
+    console.log("Hahaha")
+    embarrassedsong.setVolume(0.75);
+    // embarrassedsong.play();
+        mouseClicked();
+    image(purple_handprint, 128, 60);
+  }
+  else
+  {
+    console.log("Erm")
+  }
+}
+
+
+function mouseClicked() {
+  print(mouseX, mouseY);
+  if (user_emotion == "sad"){
+    sadsong.play();
+  }
+  else if (user_emotion == "angry"){
+    angrysong.play();
+  }
+  else if (user_emotion == "lonely"){
+    lonelysong.play();
+  }
+  else if (user_emotion == "happy"){
+     happysong.play();
+  }
+  else if (user_emotion == "disgusted"){
+    disgustedsong.play();
+  }
+  else if (user_emotion == "embarrassed"){
+    embarrassedsong.play();
+  }
+}
